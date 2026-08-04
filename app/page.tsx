@@ -138,6 +138,24 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <footer id="contact" className="border-t border-slate-800 bg-slate-950/90">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-base font-semibold text-white">LORVENIQ</p>
+            <p className="mt-1">Premium compounds crafted with precision and trust.</p>
+          </div>
+
+          <div className="flex flex-col gap-2 sm:items-end">
+            <a href="mailto:hello@lorveniq.com" className="transition hover:text-cyan-400">
+              hello@lorveniq.com
+            </a>
+            <a href="#home" className="transition hover:text-cyan-400">
+              Back to top
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
