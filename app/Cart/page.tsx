@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import {
   clearCartItems,
   getCartItems,
@@ -14,11 +14,13 @@ import CartNavLink from '../components/CartNavLink';
 
 export default function CartPage() {
   const [items, setItems] = useState<CartItem[]>(() => getCartItems());
+  const priceFormatter = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+  });
 
-  const totalItems = useMemo(
-    () => items.reduce((total, item) => total + item.quantity, 0),
-    [items],
-  );
+  const totalItems = items.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const changeQuantity = (id: string, nextQuantity: number) => {
     if (nextQuantity <= 0) {
@@ -105,6 +107,9 @@ export default function CartPage() {
                     </div>
                     <div>
                       <p className="text-base font-semibold text-slate-900">{item.name}</p>
+                      <p className="text-sm font-semibold text-slate-700">
+                        {priceFormatter.format(item.price)} each
+                      </p>
                       {item.link ? (
                         <Link href={item.link} className="text-sm font-medium text-cyan-600 transition hover:text-cyan-500">
                           View product
@@ -114,6 +119,9 @@ export default function CartPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
+                    <p className="mr-2 min-w-18 text-right text-sm font-semibold text-slate-800">
+                      {priceFormatter.format(item.price * item.quantity)}
+                    </p>
                     <button
                       type="button"
                       onClick={() => changeQuantity(item.id, item.quantity - 1)}
@@ -146,6 +154,7 @@ export default function CartPage() {
             <aside className="h-fit rounded-2xl border border-cyan-100/90 bg-white/90 p-5 shadow-sm">
               <h3 className="text-lg font-semibold text-slate-900">Summary</h3>
               <p className="mt-3 text-sm text-slate-600">Total items: {totalItems}</p>
+              <p className="mt-1 text-sm text-slate-600">Subtotal: {priceFormatter.format(totalPrice)}</p>
               <p className="mt-4 text-xs leading-relaxed text-slate-500">
                 All products are sold exclusively for scientific and laboratory research by qualified professionals.
               </p>

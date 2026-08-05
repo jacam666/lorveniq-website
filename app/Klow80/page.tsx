@@ -2,9 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import CartNavLink from '../components/CartNavLink';
+import { addCartItem } from '../lib/cart';
 
 export default function Klow80Page() {
+	const [added, setAdded] = useState(false);
+	const price = 80;
+	const priceFormatter = new Intl.NumberFormat('en-GB', {
+		style: 'currency',
+		currency: 'GBP',
+	});
+
 	const highlights = [
 		{
 			title: 'High-Load Compound Profile',
@@ -64,6 +73,32 @@ export default function Klow80Page() {
 							<p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
 								A high-strength peptide option designed for researchers running demanding and precision-focused protocols.
 							</p>
+							<p className="mt-4 text-2xl font-bold text-slate-900">{priceFormatter.format(price)}</p>
+							<div className="mt-5 flex flex-wrap items-center gap-3">
+								<button
+									type="button"
+									onClick={() => {
+										addCartItem({
+											id: '2',
+											name: 'KLOW 80MG',
+											image: '/images/KLOW_80mg-removebg-preview.png',
+											price,
+											link: '/Klow80',
+										});
+										setAdded(true);
+									}}
+									className="rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+								>
+									Add to Cart
+								</button>
+								<Link
+									href="/Cart"
+									className="rounded-full border border-cyan-200 px-5 py-2 text-sm font-semibold text-cyan-700 transition hover:bg-cyan-50"
+								>
+									View Cart
+								</Link>
+							</div>
+							{added ? <p className="mt-3 text-sm font-semibold text-cyan-700">Added to cart.</p> : null}
 						</div>
 
 						<div className="group relative h-72 overflow-hidden rounded-2xl border border-cyan-100/90 bg-gradient-to-b from-cyan-50 via-white to-slate-100 sm:h-80">

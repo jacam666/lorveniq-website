@@ -6,10 +6,9 @@ import { useState } from 'react';
 import CartNavLink from '../components/CartNavLink';
 import { addCartItem } from '../lib/cart';
 
-
-export default function RetatrutidePage() {
+export default function Retatrutide30Page() {
   const [added, setAdded] = useState(false);
-  const price = 80;
+  const price = 65;
   const priceFormatter = new Intl.NumberFormat('en-GB', {
     style: 'currency',
     currency: 'GBP',
@@ -17,16 +16,16 @@ export default function RetatrutidePage() {
 
   const highlights = [
     {
-      title: 'Dual-Receptor Targeting',
-      description: 'Built to engage GLP-1 and GIP pathways with precision for advanced metabolic studies.',
+      title: 'Dose-Adjusted Flexibility',
+      description: 'A 30MG profile suited for teams evaluating stepped protocol frameworks in metabolic research.',
     },
     {
-      title: 'Quality-Controlled Batches',
-      description: 'Produced with consistency-focused standards to support reliable protocol outcomes.',
+      title: 'Consistency Across Studies',
+      description: 'Designed to support repeatable workflows and robust documentation in controlled lab settings.',
     },
     {
-      title: 'Research-First Positioning',
-      description: 'Formulated for scientific investigation and laboratory use in controlled environments.',
+      title: 'Research-Only Positioning',
+      description: 'Provided strictly for scientific investigation by qualified professionals in compliant environments.',
     },
   ];
 
@@ -69,10 +68,10 @@ export default function RetatrutidePage() {
                 Research Profile
               </p>
               <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                Retatrutide 40MG
+                Retatrutide 30MG
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-                A next-generation peptide positioned for advanced metabolic and weight-management research protocols.
+                A calibrated Retatrutide concentration intended for advanced metabolic research with controlled dose progression.
               </p>
               <p className="mt-4 text-2xl font-bold text-slate-900">{priceFormatter.format(price)}</p>
               <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -80,11 +79,11 @@ export default function RetatrutidePage() {
                   type="button"
                   onClick={() => {
                     addCartItem({
-                      id: '1',
-                      name: 'Retatrutide 40MG',
+                      id: '6',
+                      name: 'Retatrutide 30MG',
                       image: '/images/RETATRUTIDE_40mg__2_-removebg-preview.png',
                       price,
-                      link: '/Retatrutide',
+                      link: '/Retatrutide-30',
                     });
                     setAdded(true);
                   }}
@@ -105,7 +104,7 @@ export default function RetatrutidePage() {
             <div className="group relative h-72 overflow-hidden rounded-2xl border border-cyan-100/90 bg-gradient-to-b from-cyan-50 via-white to-slate-100 sm:h-80">
               <Image
                 src="/images/RETATRUTIDE_40mg__2_-removebg-preview.png"
-                alt="Retatrutide 40MG"
+                alt="Retatrutide 30MG"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
@@ -119,7 +118,7 @@ export default function RetatrutidePage() {
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="mb-8 text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-800">Research Highlights</p>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Why Researchers Choose Retatrutide</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Why Researchers Choose Retatrutide 30MG</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -137,15 +136,6 @@ export default function RetatrutidePage() {
               <p className="mt-3 text-xs font-medium text-cyan-700">For laboratory research use only.</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 rounded-2xl border border-cyan-100 bg-gradient-to-r from-white via-cyan-50/50 to-slate-100 p-6 text-center sm:p-8">
-          <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
-            This compound is provided exclusively for scientific and laboratory investigation by qualified professionals.
-          </p>
-          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-800">
-            Not for human or animal consumption.
-          </p>
         </div>
       </section>
     </div>

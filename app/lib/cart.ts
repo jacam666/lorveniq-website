@@ -2,6 +2,7 @@ export type CartItem = {
   id: string;
   name: string;
   image: string;
+  price: number;
   link?: string;
   quantity: number;
 };
@@ -27,7 +28,17 @@ export function getCartItems(): CartItem[] {
     if (!Array.isArray(parsed)) {
       return [];
     }
-    return parsed;
+    return parsed
+      .filter((item) => item && typeof item === "object")
+      .map((item) => ({
+        id: String(item.id ?? ""),
+        name: String(item.name ?? ""),
+        image: String(item.image ?? ""),
+        link: typeof item.link === "string" ? item.link : undefined,
+        quantity: Number.isFinite(Number(item.quantity)) ? Number(item.quantity) : 1,
+        price: Number.isFinite(Number(item.price)) ? Number(item.price) : 0,
+      }))
+      .filter((item) => item.id && item.name && item.image && item.quantity > 0);
   } catch {
     return [];
   }
@@ -48,6 +59,7 @@ export function addCartItem(item: Omit<CartItem, "quantity">) {
 
   if (index >= 0) {
     existing[index].quantity += 1;
+    existing[index].price = item.price;
     saveCartItems(existing);
     return existing;
   }
