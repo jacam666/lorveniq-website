@@ -9,14 +9,14 @@ export default function ProductsPage() {
   const [lastAdded, setLastAdded] = useState<string | null>(null);
 
   const products = [
-    { id: 1, name: 'Retatrutide 40MG', image: '/images/RETATRUTIDE_40mg__2_-removebg-preview.png', link: '/Retatrutide' },
-    { id: 2, name: 'KLOW 80MG', image: '/images/KLOW_80mg-removebg-preview.png', link: '/Klow80' },
-    { id: 3, name: 'Glow 70MG', image: '/images/GLOW_70mg-removebg-preview.png', link: '/Glow70' },
-    { id: 4, name: 'MT2 10MG', image: '/images/mt2_10mg-removebg-preview.png', link: '/Mt2-10' },
-    { id: 5, name: 'MOTS-C 40MG', image: '/images/MOTS-C_40mg-removebg-preview.png', link: '/Mots-c40' },
-    { id: 6, name: 'Retatrutide 30MG', image: '/images/RETATRUTIDE_30mg-removebg-preview.png' },
-    { id: 7, name: 'Retatrutide 20MG', image: '/images/RETATRUTIDE_20mg-removebg-preview.png' },
-    { id: 8, name: 'Retatrutide 10MG', image: '/images/RETATRUTIDE_10mg-removebg-preview.png' },
+    { id: 1, name: 'Retatrutide 40MG', image: '/images/RETATRUTIDE_40mg__2_-removebg-preview.png', price: '£80', link: '/Retatrutide' },
+    { id: 2, name: 'KLOW 80MG', image: '/images/KLOW_80mg-removebg-preview.png', price: '£80', link: '/Klow80' },
+    { id: 3, name: 'Glow 70MG', image: '/images/GLOW_70mg-removebg-preview.png', price: '£70', link: '/Glow70' },
+    { id: 4, name: 'MT2 10MG', image: '/images/mt2_10mg-removebg-preview.png', price: '£20', link: '/Mt2-10' },
+    { id: 5, name: 'MOTS-C 40MG', image: '/images/MOTS-C_40mg-removebg-preview.png', price: '£50', link: '/Mots-c40' },
+    { id: 6, name: 'Retatrutide 30MG', image: '/images/RETATRUTIDE_40mg__2_-removebg-preview.png', price: '£65', link: '/Retatrutide-30' },
+    { id: 7, name: 'Retatrutide 20MG', image: '/images/RETATRUTIDE_40mg__2_-removebg-preview.png', price: '£50', link: '/Retatrutide-20' },
+    { id: 8, name: 'Retatrutide 10MG', image: '/images/RETATRUTIDE_40mg__2_-removebg-preview.png', price: '£30', link: '/Retatrutide-10' },
   ];
 
   return (
@@ -91,6 +91,9 @@ export default function ProductsPage() {
                 </p>
                 <h2 className="text-lg font-semibold text-slate-900 truncate">
                   {product.name}
+                </h2>
+                <h2>
+                    <span className="text-sm font-semibold text-slate-600">{product.price}</span>
                 </h2>
                 <p className="text-sm text-slate-600">Quality-controlled for protocol consistency.</p>
                 <div className="flex items-center justify-between gap-3 pt-1">
