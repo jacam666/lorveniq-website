@@ -16,7 +16,7 @@ const bestSellers = [
   },
   {
     name: "MT2 10mg",
-    image: "/images/MT2_10mg-removebg-preview.png",
+    image: "/images/mt2_10mg-removebg-preview.png",
     description: "High-purity peptide with clean consistency.",
     Link: "/MT2",
   },
