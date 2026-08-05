@@ -68,7 +68,7 @@ export default function MotsC40Page() {
 
 						<div className="group relative h-72 overflow-hidden rounded-2xl border border-cyan-100/90 bg-gradient-to-b from-cyan-50 via-white to-slate-100 sm:h-80">
 							<Image
-								src="/images/mots-c_40mg-removebg-preview.png"
+								src="/images/MOTS-C_40mg-removebg-preview.png"
 								alt="MOTS-C 40MG"
 								fill
 								sizes="(max-width: 768px) 100vw, 50vw"

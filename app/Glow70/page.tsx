@@ -68,7 +68,7 @@ export default function Glow70Page() {
 
 						<div className="group relative h-72 overflow-hidden rounded-2xl border border-cyan-100/90 bg-gradient-to-b from-cyan-50 via-white to-slate-100 sm:h-80">
 							<Image
-								src="/images/Glow_70mg-removebg-preview.png"
+								src="/images/GLOW_70mg-removebg-preview.png"
 								alt="Glow 70MG"
 								fill
 								sizes="(max-width: 768px) 100vw, 50vw"
