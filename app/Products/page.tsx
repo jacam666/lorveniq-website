@@ -30,7 +30,7 @@ export default function ProductsPage() {
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
                   <Link href="/" className="flex items-center gap-3">
                     <Image
-                      src="/images/LORVENIQ-logo-black.png"
+                      src="/images/a-high-impact-sophisticated-product-advertisement-for-lorveniq-r-20260831_195320Z.png"
                       alt="LORVENIQ logo"
                       width={180}
                       height={36}
