@@ -39,15 +39,17 @@ export default function CartPage() {
       <header className="sticky top-0 z-20 border-b border-slate-800/80 bg-black backdrop-blur">
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/a-high-impact-sophisticated-product-advertisement-for-lorveniq-r-20260831_195320Z.png"
-              alt="LORVENIQ logo"
-              width={180}
-              height={36}
-              priority
-              className="h-auto w-[180px] sm:w-[210px]"
-            />
+          <Link href="/" className="flex items-center">
+            <div className="relative h-16 w-[174px] overflow-hidden sm:h-[72px] sm:w-[320px]">
+              <Image
+                src="/images/lorveniq-horizontal-logo-with-subtitle-v2.PNG"
+                alt="LORVENIQ logo"
+                fill
+                priority
+                sizes="(max-width: 640px) 240px, 320px"
+                className="object-cover object-center"
+              />
+            </div>
           </Link>
 
           <nav className="flex items-center gap-5 text-sm font-medium text-slate-300">

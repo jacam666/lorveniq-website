@@ -25,31 +25,33 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-        <header className="sticky top-0 z-20 border-b border-slate-800/80 bg-black backdrop-blur">
-              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-                  <Link href="/" className="flex items-center gap-3">
-                    <Image
-                      src="/images/a-high-impact-sophisticated-product-advertisement-for-lorveniq-r-20260831_195320Z.png"
-                      alt="LORVENIQ logo"
-                      width={180}
-                      height={36}
-                      priority
-                      className="h-auto w-[180px] sm:w-[210px]"
-                    />
-                  </Link>
-        
-                  <nav className="flex items-center gap-5 text-sm font-medium text-slate-300">
-                    <CartNavLink className="inline-flex items-center transition hover:text-cyan-400" />
-                    <Link href="/Products" className="transition hover:text-cyan-400">
-                      Products
-                    </Link>
-                    <a href="#contact" className="transition hover:text-cyan-400">
-                      Contact
-                    </a>
-                  </nav>
-                </div>
-              </header>
+      <header className="sticky top-0 z-20 border-b border-slate-800/80 bg-black backdrop-blur">
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-16 w-[174px] overflow-hidden sm:h-[72px] sm:w-[320px]">
+              <Image
+                src="/images/lorveniq-horizontal-logo-with-subtitle-v2.PNG"
+                alt="LORVENIQ logo"
+                fill
+                priority
+                sizes="(max-width: 640px) 240px, 320px"
+                className="object-cover object-center"
+              />
+            </div>
+          </Link>
+
+          <nav className="flex items-center gap-5 text-sm font-medium text-slate-300">
+            <CartNavLink className="inline-flex items-center transition hover:text-cyan-400" />
+            <Link href="/Products" className="transition hover:text-cyan-400">
+              Products
+            </Link>
+            <a href="#contact" className="transition hover:text-cyan-400">
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
       <div className="mx-auto max-w-7xl px-6 py-10 sm:py-14">
         <div className="relative mb-12 overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 via-white to-slate-100 p-8 shadow-sm sm:p-10">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-200/40 blur-2xl" />
@@ -70,7 +72,7 @@ export default function ProductsPage() {
             ) : null}
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
             <div
