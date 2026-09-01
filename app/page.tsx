@@ -65,7 +65,8 @@ export default function Home() {
       <section id="home" className="relative flex min-h-[calc(100vh-73px)] flex-col items-center justify-center px-6 py-20 text-center">
         <div className="absolute inset-0 z-10">
           <Image
-            src="/images/molecule-image.png"
+            // src="/images/molecule-image.png"
+            src="/images/lab-equip-bg-image.png"
             alt="Molecular science background"
             fill
             priority

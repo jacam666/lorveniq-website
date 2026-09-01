@@ -53,18 +53,29 @@ export default function ProductsPage() {
         </div>
       </header>
       <div className="mx-auto max-w-7xl px-6 py-10 sm:py-14">
+        
         <div className="relative mb-12 overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 via-white to-slate-100 p-8 shadow-sm sm:p-10">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-200/40 blur-2xl" />
           <div className="absolute -bottom-14 left-1/3 h-44 w-44 rounded-full bg-slate-200/40 blur-2xl" />
+          <Image
+          // src="/images/dna-bg-image.png"
+          src="/images/create-a-premium-cinematic-16-9-website-background-inspired-by-p-20260901_193928Z.jpg"
+          alt="Laboratory equipment background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-100"
+
+        />
 
           <div className="relative z-10">
             <p className="mb-3 inline-flex rounded-full border border-cyan-200 bg-cyan-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-800">
               Product Catalog
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl">
               Premium Peptide Products
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-100 sm:text-base">
               Explore our flagship compounds, formulated for consistency and research-focused performance.
             </p>
             {lastAdded ? (
